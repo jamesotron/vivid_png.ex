@@ -1,5 +1,5 @@
 defmodule Vivid.PNG.ShapeToPng do
-  alias Vivid.{PNG, Shape, Bounds, Transform, Frame}
+  use Vivid
 
   @moduledoc false
 
@@ -17,14 +17,16 @@ defmodule Vivid.PNG.ShapeToPng do
       |> Transform.apply
 
     frame
-    |> Frame.push(shape, RGBA.black)
-    |> PNG.to_png(file)
+    |> Frame.push(shape, RGBA.black())
+    |> Vivid.PNG.to_png(file)
   end
 end
 
 Enum.each(~w(Arc Box Circle Group Line Path Polygon), fn mod ->
   mod = Module.concat(Vivid, mod)
   defimpl Vivid.PNG, for: mod do
+    @moduledoc false
+    @doc false
     def to_png(shape, file), do: Vivid.PNG.ShapeToPng.to_png(shape, file)
   end
 end)

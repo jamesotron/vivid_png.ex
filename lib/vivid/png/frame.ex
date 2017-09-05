@@ -1,13 +1,9 @@
 defimpl Vivid.PNG, for: Vivid.Frame do
   alias Vivid.{PNG, Frame}
 
-  @moduledoc """
-  Convert a Vivid frame into a PNG file.
-  """
+  @moduledoc false
 
-  @doc """
-  Convert a Vivid frame into a PNG file.
-  """
+  @doc false
   @spec to_png(Frame.t, Path.t) :: :ok | {:error, any}
   def to_png(frame, file) do
     frame

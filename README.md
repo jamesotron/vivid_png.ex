@@ -44,4 +44,5 @@ frame
 |> PNG.to_png("example.png")
 ```
 
-![example.png](https://raw.githubusercontent.com/jamesotron/vivid_png.ex/master/example.png)
+![example.png](https://raw.githubusercontent.com/jamesotron/vivid_png.ex/master/priv/example.png)
+

@@ -1,13 +1,9 @@
 defimpl Vivid.PNG, for: Vivid.Buffer do
   alias Vivid.{Buffer, RGBA}
 
-  @moduledoc """
-  Convert a Vivid buffer to a PNG file.
-  """
+  @moduledoc false
 
-  @doc """
-  Convert a Vivid buffer into a PNG file.
-  """
+  @doc false
   @spec to_png(Buffer.t, Path.t) :: :ok | {:error, any}
   def to_png(buffer, path) do
     with {:ok, file} <- File.open(path, [:write]),
@@ -25,7 +21,7 @@ defimpl Vivid.PNG, for: Vivid.Buffer do
     }
   end
 
-  defp create_png(%Buffer{columns: width}=buffer, file) do
+  defp create_png(%Buffer{columns: width} = buffer, file) do
     png = buffer
       |> config(file)
       |> :png.create
@@ -43,6 +39,9 @@ defimpl Vivid.PNG, for: Vivid.Buffer do
     g = round(g * 255)
     b = round(b * 255)
     a = round(a * 255)
-    <<r::integer-size(8), g::integer-size(8), b::integer-size(8), a::integer-size(8) >>
+    <<r::integer-size(8),
+      g::integer-size(8),
+      b::integer-size(8),
+      a::integer-size(8)>>
   end
 end
