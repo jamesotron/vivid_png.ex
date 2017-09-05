@@ -1,5 +1,6 @@
 defmodule Vivid.PNG.ShapeToPng do
   use Vivid
+  alias Vivid.PNG
 
   @moduledoc false
 
@@ -18,7 +19,7 @@ defmodule Vivid.PNG.ShapeToPng do
 
     frame
     |> Frame.push(shape, RGBA.black())
-    |> Vivid.PNG.to_png(file)
+    |> PNG.to_png(file)
   end
 end
 
