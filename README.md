@@ -46,3 +46,4 @@ frame
 
 ![example.png](https://raw.githubusercontent.com/jamesotron/vivid_png.ex/master/priv/example.png)
 
+
