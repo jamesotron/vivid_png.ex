@@ -1,5 +1,7 @@
 # Vivid.PNG
 
+[![Build Status](https://travis-ci.org/jamesotron/vivid_png.ex.svg?branch=master)](https://travis-ci.org/jamesotron/vivid_png.ex)
+
 Vivid.PNG adds PNG generating support to [Vivid](https://hex.pm/packages/vivid),
 a 2D rendering library implemented 100% in Elixir with no dependencies.
 
