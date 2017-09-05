@@ -8,7 +8,6 @@ defprotocol Vivid.PNG do
 
     Generating a PNG file from a frame containing shapes:
 
-
       iex> use Vivid
       ...> frame    = Frame.init(400, 200, RGBA.white)
       ...> box      = Box.init(Point.init(20,20), Point.init(120,120))
