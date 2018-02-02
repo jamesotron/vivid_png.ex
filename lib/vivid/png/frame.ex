@@ -4,7 +4,7 @@ defimpl Vivid.PNG, for: Vivid.Frame do
   @moduledoc false
 
   @doc false
-  @spec to_png(Frame.t, Path.t) :: :ok | {:error, any}
+  @spec to_png(Frame.t(), Path.t()) :: :ok | {:error, any}
   def to_png(frame, file) do
     frame
     |> Frame.buffer(:horizontal)
